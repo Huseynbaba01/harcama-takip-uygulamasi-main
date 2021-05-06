@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.harcamatakipuygulamasi.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_onBoarding1"
+            app:destination="@id/onBoarding1"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragmentSecond"
+            app:destination="@id/mainFragmentSecond"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoarding1"
+        android:name="com.example.harcamatakipuygulamasi.OnBoarding1"
+        android:label="OnBoarding1" >
+        <action
+            android:id="@+id/action_onBoarding1_to_onBoarding2"
+            app:destination="@id/onBoarding2" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoarding2"
+        android:name="com.example.harcamatakipuygulamasi.OnBoarding2"
+        android:label="OnBoarding2" >
+        <action
+            android:id="@+id/action_onBoarding2_to_onBoarding3"
+            app:destination="@id/onBoarding3" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoarding3"
+        android:name="com.example.harcamatakipuygulamasi.OnBoarding3"
+        android:label="OnBoarding3" >
+        <action
+            android:id="@+id/action_onBoarding3_to_mainFragmentFirst"
+            app:destination="@id/mainFragmentFirst"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragmentFirst"
+        android:name="com.example.harcamatakipuygulamasi.MainFragmentFirst"
+        android:label="fragment_main_first"
+        tools:layout="@layout/fragment_main_first" >
+        <action
+            android:id="@+id/action_mainFragmentFirst_to_mainFragmentSecond"
+            app:destination="@id/mainFragmentSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragmentSecond"
+        android:name="com.example.harcamatakipuygulamasi.MainFragmentSecond"
+        android:label="fragment_main_second"
+        tools:layout="@layout/fragment_main_second" >
+        <action
+            android:id="@+id/action_mainFragmentSecond_to_mainFragmentFourth"
+            app:destination="@id/mainFragmentFourth" />
+        <action
+            android:id="@+id/action_mainFragmentSecond_to_mainFragmentFirst"
+            app:destination="@id/mainFragmentFirst" />
+        <action
+            android:id="@+id/action_mainFragmentSecond_to_mainFragmentThird"
+            app:destination="@id/mainFragmentThird" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragmentFourth"
+        android:name="com.example.harcamatakipuygulamasi.MainFragmentFourth"
+        android:label="fragment_main_fourth"
+        tools:layout="@layout/fragment_main_fourth" >
+        <action
+            android:id="@+id/action_mainFragmentFourth_to_mainFragmentSecond"
+            app:destination="@id/mainFragmentSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragmentThird"
+        android:name="com.example.harcamatakipuygulamasi.MainFragmentThird"
+        android:label="fragment_main_third"
+        tools:layout="@layout/fragment_main_third" >
+        <action
+            android:id="@+id/action_mainFragmentThird_to_mainFragmentSecond"
+            app:destination="@id/mainFragmentSecond" />
+    </fragment>
+</navigation>

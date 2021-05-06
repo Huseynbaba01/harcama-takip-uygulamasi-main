@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Harcama Takip Uygulaması</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="gec">GEÇ</string>
+    <string name="text1">Karşınızda harcama takip uygulaması</string>
+    <string name="text2">Harcama uygulamamızla artık karışıklığa son!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text3">Kolayca kategorilendir</string>
+    <string name="text4">Harcamalarınızı kategorileyerek daha kolay takip edin!</string>
+    <string name="text5">Harcamalarınızı kategorileyerek daha kolay takip edin!</string>
+    <string name="text6">Harcamalarınızı kategorileyerek daha kolay takip edin!</string>
+    <string name="text1_4">İsminizi giriniz</string>
+    <string name="isminizi_giriniz">İsim</string>
+    <string name="kadin">Kadın</string>
+    <string name="erkek">Erkek</string>
+    <string name="neytral">Belirtmemeyi tercih ediyorum</string>
+    <string name="kaydet">Kaydet</string>
+    <string name="geri">Geri</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="splash_text">Harcama Takip Uygulaması</string>
+    <string name="bitir">bitir</string>
+    <string name="aciklama">Açıklama</string>
+    <string name="harcama">Harcama</string>
+    <string name="fatura">Fatura</string>
+    <string name="kira">Kira</string>
+    <string name="diger">Diğer</string>
+    <string name="tl">TL</string>
+    <string name="euro">Euro</string>
+    <string name="dolar">Dollar</string>
+    <string name="ekle">Ekle</string>
+    <string name="user">User</string>
+    <string name="toplam">Toplam</string>
+    <string name="_0_tl">0 TL</string>
+    <string name="merheba">Merheba</string>
+    <string name="sterling">Sterling</string>
+    <string name="ev_kirasi">Ev Kirasi</string>
+    <string name="_150">150$</string>
+    <string name="sil">sil</string>
+</resources>

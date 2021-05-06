@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainFragmentThird">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="120dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/aciklama"
+            android:inputType="text"
+            android:text=""
+            android:hint="@string/aciklama"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textLayout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/harcama"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:layout_width="match_parent"
+            android:hint="@string/harcama"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <RadioGroup
+        android:id="@+id/radiogroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textLayout2">
+
+        <RadioButton
+            android:id="@+id/radioFatura"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fatura"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/radioKira"
+            android:layout_width="100dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/kira"
+            android:textSize="20sp"
+            />
+        <RadioButton
+            android:id="@+id/radioDiger"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/diger"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            />
+
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/radiogroup2"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radiogroup1"
+        android:orientation="horizontal">
+        <RadioButton
+            android:textColor="@color/black"
+            android:id="@+id/radioTL"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:text = "@string/tl"
+            />
+        <RadioButton
+            android:textColor="@color/black"
+            android:id="@+id/radioEuro"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:text = "@string/euro"
+            />
+        <RadioButton
+            android:id="@+id/radioDollar"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.2"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text = "@string/dolar"
+            />
+        <RadioButton
+            android:id="@+id/radioSterling"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.2"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text = "@string/sterling"
+            />
+    </RadioGroup>
+    <Button
+        android:id="@+id/buttongeri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup2"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/geri"
+        android:layout_margin="40dp"/>
+
+    <Button
+        android:id="@+id/buttonekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="@string/ekle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
