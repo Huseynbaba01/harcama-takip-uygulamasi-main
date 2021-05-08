@@ -1,5 +1,6 @@
 package com.example.harcamatakipuygulamasi
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,6 +39,7 @@ class MainFragmentThird : Fragment(),RecyclerViewAdapter.RecyclerViewElementClic
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = ViewModelProviders.of(this).get(MainFragmentThirdViewModel::class.java)
         val view = inflater.inflate(R.layout.fragment_main_third, container, false)
         val view2 = inflater.inflate(R.layout.fragment_main_second, container, false)
         buttonGeri = view.findViewById(R.id.buttongeri)
@@ -53,10 +55,14 @@ class MainFragmentThird : Fragment(),RecyclerViewAdapter.RecyclerViewElementClic
         radioDiger = view.findViewById(R.id.radioDiger)
         radioGroup1 = view.findViewById(R.id.radiogroup1)
         radioGroup2 = view.findViewById(R.id.radiogroup2)
+        recyclerViewAdapter = RecyclerViewAdapter(MainFragmentSecond())
         buttonGeri.setOnClickListener{
-                navigateForButtons()
+
+            navigateForButtons()
         }
         buttonEkle.setOnClickListener{
+            var harcama:HarcamaEntity
+
             if(radioGroup1.isEnabled
                     && (
                             radioFatura.isChecked
@@ -111,6 +117,12 @@ class MainFragmentThird : Fragment(),RecyclerViewAdapter.RecyclerViewElementClic
         }
         val harcama = HarcamaEntity(0,aciklama,harcamaPrice,type, currency)
 //        viewModel.insertAllHarcamaInfoEntity(harcama)
+        viewModel.getAllHarcamaObservers().observe(viewLifecycleOwner, Observer {
+            recyclerViewAdapter.setListData(ArrayList(it))
+            recyclerViewAdapter.notifyDataSetChanged()
+        })
+        onItemClickListener(harcama)
+        viewModel.insertAllHarcamaInfoEntity(harcama)
 
     }
 
@@ -137,7 +149,7 @@ class MainFragmentThird : Fragment(),RecyclerViewAdapter.RecyclerViewElementClic
         when{
             harcama.currency == 1 -> radioTL.setChecked(true)
             harcama.currency == 2 -> radioEuro.setChecked(true)
-            harcama.currency == 2 -> radioDollar.setChecked(true)
+            harcama.currency == 3 -> radioDollar.setChecked(true)
             else -> radioSterling.setChecked(true)
         }
     }

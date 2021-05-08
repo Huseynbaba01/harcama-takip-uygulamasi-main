@@ -55,6 +55,7 @@ class RecyclerViewAdapter(val listener: MainFragmentSecond): RecyclerView.Adapte
             deleteHarcama.setOnClickListener{
                 listener.onDeleteHarcamaClickListener(data)
             }
+
         }
     }
     interface RecyclerViewElementClickListener{

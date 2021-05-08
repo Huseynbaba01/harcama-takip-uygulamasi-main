@@ -2,6 +2,7 @@ package com.example.harcamatakipuygulamasi
 
 import android.graphics.Color
 import android.os.Bundle
+import android.text.Layout
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,11 +30,13 @@ class MainFragmentSecond : Fragment(),RecyclerViewAdapter.RecyclerViewElementCli
     private lateinit var buttonSterling: Button
     private lateinit var viewModel:MainFragmentThirdViewModel
     lateinit var recyclerViewAdapter: RecyclerViewAdapter
+    lateinit var recyclerViewElement:View
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_main_second, container, false)
+        val view2 = inflater.inflate(R.layout.recycler_view_element, container, false)
         userName = view.findViewById(R.id.user)
         overAll = view.findViewById(R.id.toplam)
         floatingActionButton = view.findViewById(R.id.floatingActionButton)
@@ -76,9 +79,9 @@ class MainFragmentSecond : Fragment(),RecyclerViewAdapter.RecyclerViewElementCli
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.apply{
             val thisContext = container?.context
-            layoutManager = LinearLayoutManager(thisContext)
+            layoutManager = LinearLayoutManager(context)
             recyclerViewAdapter = RecyclerViewAdapter(this@MainFragmentSecond)
-            recyclerView.adapter = recyclerViewAdapter
+            adapter = recyclerViewAdapter
             val divider = DividerItemDecoration(thisContext, StaggeredGridLayoutManager.VERTICAL)
             addItemDecoration(divider)
         }
