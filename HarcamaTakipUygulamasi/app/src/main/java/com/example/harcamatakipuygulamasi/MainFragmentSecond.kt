@@ -9,10 +9,16 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.harcamatakipuygulamasi.data.HarcamaEntity
+import com.example.harcamatakipuygulamasi.data.MainFragmentThirdViewModel
+import com.example.harcamatakipuygulamasi.data.RecyclerViewAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class MainFragmentSecond : Fragment() {
+class MainFragmentSecond : Fragment(),RecyclerViewAdapter.RecyclerViewElementClickListener {
     private lateinit var userName: TextView
     private lateinit var overAll: TextView
     private lateinit var floatingActionButton: FloatingActionButton
@@ -21,6 +27,8 @@ class MainFragmentSecond : Fragment() {
     private lateinit var buttonEuro: Button
     private lateinit var buttonDollar: Button
     private lateinit var buttonSterling: Button
+    private lateinit var viewModel:MainFragmentThirdViewModel
+    lateinit var recyclerViewAdapter: RecyclerViewAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -64,7 +72,27 @@ class MainFragmentSecond : Fragment() {
         floatingActionButton.setOnClickListener{
             findNavController().navigate(R.id.action_mainFragmentSecond_to_mainFragmentThird)
         }
+        val thisContext = container?.context
+        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.apply{
+            val thisContext = container?.context
+            layoutManager = LinearLayoutManager(thisContext)
+            recyclerViewAdapter = RecyclerViewAdapter(this@MainFragmentSecond)
+            recyclerView.adapter = recyclerViewAdapter
+            val divider = DividerItemDecoration(thisContext, StaggeredGridLayoutManager.VERTICAL)
+            addItemDecoration(divider)
+        }
+
         return view
+    }
+
+
+    override fun onDeleteHarcamaClickListener(harcama: HarcamaEntity) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onItemClickListener(harcama: HarcamaEntity) {
+        TODO("Not yet implemented")
     }
 
 }

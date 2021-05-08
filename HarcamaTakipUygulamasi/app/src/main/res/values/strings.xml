@@ -36,6 +36,10 @@
     <string name="merheba">Merheba</string>
     <string name="sterling">Sterling</string>
     <string name="ev_kirasi">Ev Kirasi</string>
-    <string name="_150">150$</string>
+    <string name="_150">150</string>
     <string name="sil">sil</string>
+    <string name="currencyTL">₺</string>
+    <string name="currencyEuro">€</string>
+    <string name="currencyDollar">$</string>
+    <string name="currencySterling">£</string>
 </resources>
